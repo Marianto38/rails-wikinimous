@@ -1,9 +1,19 @@
-<h1> New Article </h1>
-<%= form_for @article do |f| %>
-<%= f.label :title, "Insert article" %>
-<%= f.text_field :title %>
-<%= f.label :content, "Content" %>
-<%= f.text_field :content %>
-<%= f.submit %>
-<% end %>
-<%= link_to "Back to List", articles_path %>
+<div class="container col-6">
+  <h1> New Article </h1>
+      <div class="mb-3 col-8">
+        <%= form_for @article do |f| %>
+          <div class="mb-3" class="justify-text-start">
+            <%= f.label :title, "Insert article" %><input class="form-control" <%= f.text_field :title %>
+          </div>
+        <div class="mb-3">
+          <%= f.label :content, "Content" %>
+          <input class="form-control"<%= f.text_field :content %>
+        </div>
+      <div class="mb-3">
+        <%= f.submit %>
+      </div>
+        <% end %>
+      <div class="mb-3">
+        <%=link_to "Back to List", articles_path%>
+      </div>
+</div>

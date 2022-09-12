@@ -1,8 +1,13 @@
-<h1> hola </h1>
-<li><%= @article.title %> <%= @article.content%></li>
-<%= link_to "Back to list", articles_path  %>
-<%= link_to "Edit article", edit_article_path  %>
-<%= link_to "Delete",
-  article_path(@article),
-  data: {turbo_method: :delete, turbo_confirm: "Are you sure delete #{@article.title}?"}
-%>
+<div class="container center">
+<article>
+  <h2><%= @article.title %>
+    <small> <%= link_to edit_article_path(@article) do %><i class='fa-solid fa-pen-to-square'></i>
+      <% end %>
+    <%= link_to article_path(@article), data: {turbo_method: :delete, turbo_confirm: "Are you sure delete #{@article.title}?"} do %>
+    <i class="fa-solid fa-trash-can"></i>
+      <% end %>
+      </small>
+  <hr>
+    <p><%= @article.content%></p>
+  </article>
+</div>
